@@ -1,0 +1,77 @@
+:root{
+    --lighter: #D3FFDD;
+    --darker: purple;
+}
+
+.mantra-container{
+    width: 100%;
+    min-height: 90vh;
+    margin:20px 0px;
+    padding: 20px;
+    border-radius: 45px;
+}
+
+.mandala-container{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mandala-img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.spacer{
+    height: 800px;
+}
+
+.container{
+    background-color:var(--lighter);
+    border-radius: 45px;
+    border: solid 2px;
+    padding: 15px;
+    margin:3px 0px;
+}
+
+body{
+    background-color:var(--darker);
+    display: flex;
+    justify-content: center;
+}
+
+.text-wrapper{
+    background-color: var(--lighter);
+    border: 2px var(--darker);
+    border-radius: 25px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.text-wrapper p{
+    font-family: 'Yeseva One', cursive;
+    font-size: large;
+    font-style: bold;
+}
+
+.load-wrapper{
+    display: none;
+    justify-content: right;
+}
+
+button{
+    border-radius: 25px;
+    background-color: var(--lighter);
+    color: var(--darker);
+    
+}
+
+h1{
+    color: var(--darker);
+    font-family: 'Yeseva One', cursive;
+    text-align: center;
+}
+
+
+

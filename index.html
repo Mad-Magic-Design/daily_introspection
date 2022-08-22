@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="container">
+            <header id="header">
+                <div class="load-wrapper" id="load-wrapper">
+                    <button onclick="displayMantra()">Show Latest Introspection</button>
+                </div>
+                <h1>DAILY INTROSPECTION</h1>
+            </header>
+            <form id='questions' action="submit">
+               <div class="form-group blocked-chakra">
+                   <h3>Where did your energy feel blocked today?</h3>
+                   <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="crownBlocked" value="purple">
+                   <label for="crownBlocked">Selfishness</label>
+                </div>
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="throatBlocked" value="blue">
+                   <label for="throatBlocked">Unable to express myself</label>
+                </div>
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="heartBlocked" value="green">
+                   <label for="heartBlocked">Hate or anger towards others</label>
+                </div>
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="solarplexusBlocked" value="yellow">
+                   <label for="solarplexusBlocked">Unconfident</label>
+                </div>
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="sacralBlocked" value="orange">
+                   <label for="sacralBlocked">Guilt</label>
+                </div>
+                <div class="form-check">
+                   <input class="form-check-input" type="radio" name="blocked" id="rootBlocked" value="red">
+                   <label for="rootBlocked">Fear</label>
+                </div>
+                </div>
+
+                <div class="form-group open-chakra">
+                    <h3>Where was your energy flowing best today?</h3>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="crownopened" value="purple">
+                    <label for="crownBlocked">Oneness</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="throatopened" value="blue">
+                    <label for="throatBlocked">Speaking your truth</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="heartopened" value="green">
+                    <label for="heartBlocked">Love</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="solarplexusopened" value="yellow">
+                    <label for="solarplexusBlocked">Confidence</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="sacralopened" value="orange">
+                    <label for="sacralBlocked">Pleasure</label>
+                 </div>
+                 <div class="form-check">
+                    <input class="form-check-input" type="radio" name="opened" id="rootopened" value="red">
+                    <label for="rootBlocked">Grounded</label>
+                 </div>
+                 </div>
+                 
+                 <div class="form-group madala-picker">
+                    <h3>How would you like your energy flow?</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mandala" id="loveMandala" value="flower">
+                        <label for="loveMandala">Love</label>
+                    </div>
+                    <div class="form-check">
+                        <input  class="form-check-input" type="radio" name="mandala" id="strengthMandala" value="strength">
+                        <label for="">Strength</label>
+                    </div>
+                    <div class="form-check">
+                        <input  class="form-check-input" type="radio" name="mandala" id="motivationMandala" value="motivation">
+                        <label for="">Movitation</label>
+                    </div>
+                    <div class="form-check">
+                        <input  class="form-check-input" type="radio" name="mandala" id="knowledgeMandala" value="meta">
+                        <label for="knowledgeMandala">Knowledge</label>
+                    </div>
+                 </div>
+                 
+                 <div class="form-group">
+                    <h3>Today I am grateful for...</h3>
+                   
+                    <textarea class="form-control" id="gratefulInput" rows="3" name="gratefulInput"></textarea>
+                 </div>
+                 <div class="form-group">
+                    <h3>Tomorrow I would like to be better about...</h3>
+                   
+                    <textarea class="form-control" id="improvementInput" rows="3" name="'improvementInput"></textarea>
+                 </div>
+                 <input type="submit" value="Send out to the Universe">
+                 <div class="spacer"></div>
+            </form>
+            
+            
+            <div id='mantra-container'class='mantra-container'>
+                <div class="mandala-container" id="mandala-container">
+                    <img src="imgs/dash.png" alt="" class="mandala-img" id="mandala-img">
+                </div>
+                <div class="text-wrapper">
+                    <p>Today I am grateful for <span id="gratefulText"></span></p>
+                </div>
+                <div class="text-wrapper">
+                    <p>Tomorrow I will be better about <span id="improvementText"></span></p>
+                </div>
+            </div>
+         </div>
+        <script src="app.js" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
